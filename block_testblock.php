@@ -25,7 +25,7 @@
 class block_testblock extends block_base {
 
     function init() {
-        $this->title = get_string('pluginname', 'block_html');
+        $this->title = get_string('pluginname', 'block_testblock');
     }
 
     function get_content() {
