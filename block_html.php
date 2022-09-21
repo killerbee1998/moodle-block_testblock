@@ -35,6 +35,10 @@ class block_html extends block_base {
         }
 
         $this->content = new stdClass;
+        $this->content->text = 'This is the text';
+        $this->content->footer = 'This is the footer';
+
+        return $this->content;
     }
 
     
