@@ -35,18 +35,23 @@ class block_testblock extends block_base {
     function get_content() {
         global $DB;
 
-        // $users = $DB->get_records('user');
-        // $userstring = '';
-        // foreach($users as $user){
-        //     $userstring .= $user->firstname . ' ' . $user->lastname . '<br>';
-        // }
 
-        
-        $courses = $DB->get_records('course');
         $content = '';
-        foreach($courses as $course){
-            $content.= $course->fullname . "<br>";
+        $showcourses = get_config('block_testblock', 'showcourses');
+        
+        if($showcourses){
+            $courses = $DB->get_records('course');
+            foreach($courses as $course){
+                $content.= $course->fullname . "<br>";
+            }    
+        }else{
+            $users = $DB->get_records('user');
+            foreach($users as $user){
+                $content .= $user->firstname . ' ' . $user->lastname . '<br>';
+            }
         }
+
+
 
 
         if ($this->content !== NULL) {
