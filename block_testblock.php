@@ -31,18 +31,26 @@ class block_testblock extends block_base {
     function get_content() {
         global $DB;
 
-        $users = $DB->get_records('user');
-        $userstring = '';
-        foreach($users as $user){
-            $userstring .= $user->firstname . ' ' . $user->lastname . '<br>';
+        // $users = $DB->get_records('user');
+        // $userstring = '';
+        // foreach($users as $user){
+        //     $userstring .= $user->firstname . ' ' . $user->lastname . '<br>';
+        // }
+
+        
+        $courses = $DB->get_records('course');
+        $content = '';
+        foreach($courses as $course){
+            $content.= $course->fullname . "<br>";
         }
+
 
         if ($this->content !== NULL) {
             return $this->content;
         }
 
         $this->content = new stdClass;
-        $this->content->text = $userstring;
+        $this->content->text = $content;
         $this->content->footer = 'This is the footer';
 
         return $this->content;
