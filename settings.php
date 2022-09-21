@@ -22,7 +22,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
- 
+
 if($ADMIN->fulltree){
-    $settings->add(new admin_setting_configcheckbox('block_testblock/showcourses', 'Show courses', 'Shows courses instead of users', 0));
+    $settings->add(new admin_setting_configcheckbox('block_testblock/showcourses', get_string('showcourses', 'block_testblock'), get_string('showcourses:description', 'block_testblock'), 0));
 }
