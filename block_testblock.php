@@ -28,6 +28,10 @@ class block_testblock extends block_base {
         $this->title = get_string('pluginname', 'block_testblock');
     }
 
+    function has_config(){
+        return true;
+    }
+
     function get_content() {
         global $DB;
 
